@@ -1,0 +1,60 @@
+<!doctype html>
+<meta charset="utf-8">
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, max-age=604800, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ '/static/normalize.css'|url }}">
+<link rel="stylesheet" type="text/css" href="{{ '/static/skeleton.css'|url }}">
+<link rel="stylesheet" type="text/css" href="{{ '/static/style.css'|url }}">
+<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+</head>
+<title>{% block title %}Moscow Zen Center{% endblock %}</title>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="eight columns">
+<div style="font-size:1.8em">Moscow Zen Center</div>
+    </div>
+    <div class="four columns">
+<p>(См. также наш <a href="http://mskcd.ru">русский сайт</a>)</p>
+    </div>
+  </div>
+  <header>
+    <!--<h1>mskcd</h1>-->
+    <nav>
+      <ul class="nav navbar-nav">
+        <!--<<li{% if this._path == '/' %} class="active"{% endif
+          %}><a href="{{ '/'|url }}">Welcome</a></li>-->
+        {% for href, title in [
+          ['/', 'Practice'],
+          ['/history', 'History']
+        ] %}
+        <li{% if this.is_child_of(href) %} class=""{% endif
+          %}><a href="{{ href|url }}">{{ title }}</a></li>
+      {% endfor %}
+      </ul>
+    </nav>
+  </header>
+  <br>
+  <div class="page">
+    {% block body %}{% endblock %}
+  </div>
+
+  <div class="row">
+  <div class="twelve columns">
+  <footer>
+  <p>
+    <hr>
++7&nbsp;(916)&nbsp;258-02-86 | <nobr>softkey@rambler.ru</nobr>
+<br>Moscow, ul.Krasnobogatyrskaya, house&nbsp;27, apartment&nbsp;106
+<br><b>Zazen: Monday, Wednesday - 7:00pm.</b>
+    <br/>&copy; 2010-2018 Moscow Zen Center.
+    </p>
+  </footer>
+  </div>
+  </div>
+  </div>
+</body>

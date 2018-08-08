@@ -1,0 +1,36 @@
+<!doctype html>
+<meta charset="utf-8">
+<head>
+<link rel="stylesheet" href="{{ '/static/style.css'|url }}">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<title>{% block title %}Московский центр Дзэн{% endblock %} — mskcd</title>
+<body>
+  <header>
+    <!--<h1>mskcd</h1>-->
+    <nav>
+      <ul class="nav navbar-nav">
+        <li{% if this._path == '/' %} class="active"{% endif
+          %}><a href="{{ '/'|url }}">Welcome</a></li>
+        {% for href, title in [
+          ['/blog', 'G'],
+          ['/projects', 'Projects'],
+          ['/about', 'Практика'],
+          ['/olo', 'Olo']
+        ] %}
+          <li{% if this.is_child_of(href) %} class="active"{% endif
+            %}><a href="{{ href|url }}">{{ title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+  <div class="page">
+    {% block body %}{% endblock %}
+  </div>
+  <footer>
+    <hr>
++7&nbsp;(916)&nbsp;258-02-86 | <nobr>softkey@rambler.ru</nobr> | <a href="http://vkontakte.ru/club17910034">vkontakte.ru/club17910034</a> | 107564&nbsp;Москва, ул.&nbsp;Краснобогатырская, д.27 кв.106
+    <br/>&copy; Copyright 2018 by mskcd.ru.
+  </footer>
+</body>

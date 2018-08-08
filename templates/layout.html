@@ -1,0 +1,58 @@
+<!doctype html>
+<meta charset="utf-8">
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, max-age=604800, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ '/static/normalize.css'|url }}">
+<link rel="stylesheet" type="text/css" href="{{ '/static/skeleton.css'|url }}">
+<link rel="stylesheet" type="text/css" href="{{ '/static/style.css'|url }}">
+<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+</head>
+<title>{% block title %}Московский центр Дзэн{% endblock %} — mskcd</title>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="twelve columns">
+<a href="{{ '/'|url }}"><img src="{{ '/static/img/mskcdlogo.png'|url }}" width=252 height=81 border=0></a><br>
+
+  <header>
+    <!--<h1>mskcd</h1>-->
+    <a href="{{ '/priezd-mastera'|url }}" margin-bottom=20px>
+      В сентябре (2018-го) в Москву приезжает мастер дзэн Инген Брин!</a>
+      <hr>
+    <nav>
+      <ul class="nav navbar-nav">
+        <!--<<li{% if this._path == '/' %} class="active"{% endif
+          %}><a href="{{ '/'|url }}">Welcome</a></li>-->
+        {% for href, title in [
+          ['/practice.html', 'Практика'],
+          ['/teaching.html', 'Учение'],
+          ['/history.html', 'История'],
+          ['/book.html', 'Книга'],
+          ['/links.html', 'Ссылки']
+        ] %}
+        <li{% if this.is_child_of(href) %} class="active"{% endif
+          %}><a href="{{ href|url }}">{{ title }}</a></li>
+      {% endfor %}
+      </ul>
+    </nav>
+  </header>
+  <div class="page">
+    {% block body %}{% endblock %}
+  </div>
+  <footer>
+  <p>
+    <hr>
++7&nbsp;(916)&nbsp;258-02-86 | <a href="https://vk.com/mskcd">vk.com/mskcd</a> | <nobr>softkey@rambler.ru</nobr>
+<br>107564&nbsp;Москва, ул.&nbsp;Краснобогатырская, д.27 кв.106.
+<br><b>Практики проходят по понедельникам и средам (начало в 19:00).</b>
+    <br/>Авторское право &copy; 2010-2018 Московскй Центр Дзэн.
+    </p>
+  </footer>
+  </div>
+  </div>
+  </div>
+</body>

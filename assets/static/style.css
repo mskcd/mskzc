@@ -1,0 +1,47 @@
+
+
+/*body {
+    margin: auto;
+    margin-top: 0.5rem;
+    max-width: 1096px;
+      background: white;
+    margin-left: 20;
+    margin-top: 10;
+    margin-right: 20;
+    margin-bottom: 10;
+    margin-top: 0.5rem;
+    margin-left: 1.2rem;
+    margin-right: 20;
+    margin-bottom: 10;
+}*/
+
+a {
+    color: #0375b4;
+}
+
+a:hover {
+    color: #33bbdf;
+}
+
+img {height: auto; width: auto; max-width: 100%;}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: larger;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 8px 0 0;
+    padding: 0;
+}
+
+div.page {
+    background: white;
+}
+
+.active {
+      background: black;
+}
